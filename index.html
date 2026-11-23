@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>แดชบอร์ดผลการประเมิน รุ่นที่ 2 วันที่ 1 - ผู้นำการเปลี่ยนแปลงขับเคลื่อนตำบลเข้มแข็ง ปี 2570</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;500;600;700;800&family=Sarabun:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --em9:#023c20; --em8:#035a30; --em7:#056839; --em6:#0a8f50; --em5:#22b573; --em1:#e7f6ee; --em0:#f4fbf7;
+  --gold:#d4af37; --gold2:#f5d76e; --ink:#13221a; --mut:#5b6b62; --line:#e3ece6; --card:#fff; --bg:#eef6f1;
+  --c5:#035a30; --c4:#0a8f50; --c3:#8cc63f; --c2:#f0a531; --c1:#d9534f;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Prompt','Sarabun',system-ui,sans-serif;background:var(--bg);color:var(--ink);min-height:100vh;
+  background-image:radial-gradient(circle at 0% 0%,rgba(10,143,80,.10),transparent 40%),radial-gradient(circle at 100% 15%,rgba(212,175,55,.12),transparent 35%)}
+.sar{font-family:'Sarabun','Prompt',sans-serif}
+.wrap{max-width:1240px;margin:0 auto;padding:0 18px}
+/* top bar */
+.top{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-top:10px;padding-bottom:10px}
+.brand{display:flex;align-items:center;gap:10px;min-width:0}
+.logo{width:40px;height:40px;border-radius:12px;background:linear-gradient(135deg,var(--em9),var(--em6));display:grid;place-items:center;flex-shrink:0;box-shadow:0 4px 10px rgba(5,104,57,.25)}
+.brand h1{font-size:15px;font-weight:700;line-height:1.2}
+.brand p{font-size:12px;color:var(--em7);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.live{display:flex;align-items:center;gap:10px;font-size:12px;color:var(--mut);flex-shrink:0}
+.dot{width:9px;height:9px;border-radius:50%;background:#9ca3af;position:relative}
+.dot.on{background:#16a34a}.dot.on::after{content:"";position:absolute;inset:-4px;border-radius:50%;border:2px solid #16a34a;animation:ping 1.6s infinite}
+.dot.err{background:#dc2626}
+@keyframes ping{0%{opacity:.8;transform:scale(.6)}100%{opacity:0;transform:scale(1.6)}}
+.btn{border:1px solid var(--line);background:#fff;border-radius:10px;padding:7px 12px;font:inherit;font-size:12px;cursor:pointer;color:var(--ink);display:inline-flex;align-items:center;gap:6px;transition:.15s}
+.btn:hover{border-color:var(--em5);background:var(--em0)}
+.btn:disabled{opacity:.4;cursor:default}
+/* hero */
+.hero{margin:22px 0;border-radius:26px;padding:28px;color:#fff;position:relative;overflow:hidden;
+  background:linear-gradient(130deg,var(--em9) 0%,var(--em7) 55%,#0a7a45 100%);box-shadow:0 18px 40px -18px rgba(2,60,32,.55)}
+.hero .art{position:absolute;right:-10px;bottom:-14px;width:340px;opacity:.95;pointer-events:none}
+.hero .tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+.tag{font-size:12px;font-weight:600;padding:4px 12px;border-radius:999px;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.25)}
+.tag.g{background:var(--gold);color:var(--em9);border:none}
+.hero h2{font-size:clamp(22px,3.2vw,34px);font-weight:800;line-height:1.25;max-width:720px}
+.hero h3{font-size:clamp(14px,1.8vw,18px);color:var(--gold2);font-weight:600;margin-top:4px;max-width:640px}
+.hero .meta{margin-top:14px;font-size:13px;color:#d1fae5;display:flex;gap:18px;flex-wrap:wrap}
+/* grid & cards */
+.grid{display:grid;gap:16px}
+.kpis{grid-template-columns:repeat(4,1fr)}
+.g2{grid-template-columns:1fr 1fr}.g3{grid-template-columns:repeat(3,1fr)}
+.g-main{grid-template-columns:1.1fr 1.9fr}
+.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:20px;box-shadow:0 1px 2px rgba(0,0,0,.03)}
+.card h4{font-size:15px;font-weight:700;display:flex;align-items:center;gap:8px;margin-bottom:14px}
+.card h4 .ic{width:28px;height:28px;border-radius:9px;background:var(--em1);display:grid;place-items:center;flex-shrink:0}
+.sub{font-size:12px;color:var(--mut);font-weight:400}
+.kpi{display:flex;align-items:center;gap:14px;position:relative;overflow:hidden}
+.kpi .lbl{font-size:12.5px;color:var(--mut)}
+.kpi .val{font-size:30px;font-weight:800;line-height:1.1;color:var(--em8);font-variant-numeric:tabular-nums}
+.kpi .val small{font-size:14px;color:var(--mut);font-weight:500}
+.kpi .hint{font-size:12px;margin-top:2px}
+.kpi .bgi{position:absolute;right:-8px;bottom:-10px;opacity:.08}
+.pill{display:inline-block;font-size:11.5px;font-weight:600;padding:2px 9px;border-radius:999px;background:var(--em1);color:var(--em8)}
+.section-title{display:flex;align-items:center;gap:10px;margin:30px 0 14px;font-size:18px;font-weight:700}
+.section-title .n{width:30px;height:30px;border-radius:10px;background:var(--em7);color:#fff;display:grid;place-items:center;font-size:14px}
+/* bars */
+.hb{display:grid;grid-template-columns:minmax(90px,38%) 1fr auto;align-items:center;gap:10px;font-size:13px;margin:9px 0}
+.hb .name{color:#334155;line-height:1.3}
+.track{height:12px;background:#eef2ef;border-radius:999px;overflow:hidden}
+.fill{height:100%;border-radius:999px;background:linear-gradient(90deg,var(--em6),var(--em7));transition:width .6s ease}
+.hb .num{font-variant-numeric:tabular-nums;font-weight:600;white-space:nowrap;font-size:12.5px}
+.hb .num span{color:var(--mut);font-weight:400}
+/* donut legend */
+.donut-wrap{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+.legend{display:flex;flex-direction:column;gap:8px;font-size:13px;flex:1;min-width:140px}
+.legend div{display:flex;align-items:center;gap:8px}
+.sw{width:12px;height:12px;border-radius:4px;flex-shrink:0}
+/* subject block */
+.subj-head{display:flex;justify-content:space-between;align-items:flex-start;gap:14px;padding:14px 16px;border-radius:14px;background:linear-gradient(90deg,var(--em8),var(--em9));color:#fff;margin-bottom:12px}
+.subj-head b{font-size:14px;font-weight:600;line-height:1.45}
+.subj-score{text-align:right;flex-shrink:0}
+.subj-score .v{font-size:24px;font-weight:800;color:var(--gold2);line-height:1}
+.subj-score .l{font-size:11.5px;color:#d1fae5}
+table{width:100%;border-collapse:collapse;font-size:13px}
+th{font-size:11.5px;font-weight:600;color:var(--mut);text-align:center;padding:6px 4px;border-bottom:1px solid var(--line);white-space:nowrap}
+th:first-child{text-align:left}
+td{padding:10px 4px;border-bottom:1px solid #f1f5f2;text-align:center;vertical-align:middle;font-variant-numeric:tabular-nums}
+td.q{text-align:left;color:#334155;line-height:1.45;font-family:'Sarabun','Prompt',sans-serif;font-size:13.5px;min-width:220px}
+td.q .dist{display:flex;height:8px;border-radius:999px;overflow:hidden;margin-top:6px;background:#eef2ef}
+td.q .dist i{display:block;height:100%;transition:width .6s ease}
+td.cnt{color:#475569;font-size:12.5px}
+td.cnt.z{color:#cbd5e1}
+td.mean{font-weight:700;color:var(--em8)}
+.lv{font-size:11.5px;font-weight:600;padding:2px 8px;border-radius:999px;white-space:nowrap}
+.lv5{background:#dcfce7;color:#065f46}.lv4{background:#e0f2fe;color:#075985}.lv3{background:#fef9c3;color:#854d0e}.lv2{background:#ffedd5;color:#9a3412}.lv1{background:#fee2e2;color:#991b1b}
+.scale{display:flex;gap:12px;flex-wrap:wrap;font-size:12px;color:var(--mut);margin:-4px 0 12px}
+.scale span{display:flex;align-items:center;gap:5px}
+.table-scroll{overflow-x:auto}
+/* rank */
+.rank li{list-style:none;display:flex;gap:10px;align-items:flex-start;padding:9px 0;border-bottom:1px dashed var(--line);font-size:13px}
+.rank li:last-child{border:none}
+.rank .b{min-width:46px;text-align:center;font-weight:700;border-radius:8px;padding:3px 0;font-size:13px}
+.rank .t{flex:1;line-height:1.45;font-family:'Sarabun','Prompt',sans-serif;font-size:13.5px}
+.rank .t small{display:block;color:var(--mut);font-family:'Prompt',sans-serif;font-size:11.5px}
+/* comments */
+.cm{max-height:360px;overflow-y:auto;padding-right:4px;display:flex;flex-direction:column;gap:8px}
+.cm::-webkit-scrollbar{width:6px}.cm::-webkit-scrollbar-thumb{background:#cbd5e1;border-radius:9px}
+.cm .it{background:var(--em0);border:1px solid #e1efe7;border-radius:12px;padding:10px 12px;font-size:13.5px;line-height:1.55;font-family:'Sarabun','Prompt',sans-serif;position:relative}
+.cm .it .x{float:right;margin-left:8px;font-family:'Prompt';font-size:11px;font-weight:700;background:var(--em7);color:#fff;border-radius:999px;padding:1px 8px}
+.cm.amber .it{background:#fffaf0;border-color:#f6e7c8}.cm.amber .it .x{background:#c27c0e}
+.cm.blue .it{background:#f3f7ff;border-color:#dfe7fb}.cm.blue .it .x{background:#2b5cb8}
+.empty{color:#94a3b8;font-size:13px;text-align:center;padding:26px 0}
+/* person viewer */
+.pv-nav{display:flex;align-items:center;gap:8px}
+.pv-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:12px}
+.pv-grid div{background:#f8faf9;border:1px solid var(--line);border-radius:12px;padding:9px 11px;font-size:13px}
+.pv-grid div span{display:block;font-size:11px;color:var(--mut)}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{font-size:12px;border-radius:8px;padding:3px 8px;color:#fff;font-weight:600;font-variant-numeric:tabular-nums}
+/* timeline */
+.tl{display:flex;align-items:flex-end;gap:4px;height:120px;padding-top:10px}
+.tl .bar{flex:1;background:linear-gradient(180deg,var(--em5),var(--em7));border-radius:6px 6px 2px 2px;min-height:3px;position:relative;transition:height .6s}
+.tl .bar b{position:absolute;top:-17px;left:50%;transform:translateX(-50%);font-size:10.5px;color:var(--em8)}
+.tl-x{display:flex;gap:4px;font-size:10.5px;color:var(--mut);margin-top:5px}
+.tl-x span{flex:1;text-align:center;white-space:nowrap;overflow:hidden}
+/* status */
+.banner{display:none;margin:14px 0 0;padding:10px 14px;border-radius:12px;font-size:13px;background:#fff7ed;border:1px solid #fed7aa;color:#9a3412}
+.banner.show{display:block}
+.loading{padding:60px 0;text-align:center;color:var(--mut)}
+.spin{width:34px;height:34px;border:3px solid var(--em1);border-top-color:var(--em7);border-radius:50%;margin:0 auto 12px;animation:sp 1s linear infinite}
+@keyframes sp{to{transform:rotate(360deg)}}
+footer{margin:36px 0 24px;text-align:center;font-size:12px;color:var(--mut)}
+@media (max-width:980px){.kpis{grid-template-columns:repeat(2,1fr)}.g3{grid-template-columns:1fr 1fr}.g-main{grid-template-columns:1fr}.hero .art{width:240px;opacity:.35}}
+@media (max-width:640px){.g2,.g3,.kpis{grid-template-columns:1fr}.hero .art{display:none}.pv-grid{grid-template-columns:1fr 1fr}.brand p{display:none}.kpi .val{font-size:26px}.hero{padding:22px}.live .txt{display:none}}
+@media print{.top,.btn{display:none}.card{break-inside:avoid}}
+</style>
+</head>
+<body>
+
+<div class="top"><div class="wrap">
+  <div class="brand">
+    <div class="logo"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/></svg></div>
+    <div style="min-width:0"><h1>แดชบอร์ดผลการประเมิน · รุ่นที่ 2 วันที่ 1</h1><p>หลักสูตรสร้างผู้นำการเปลี่ยนแปลงขับเคลื่อนตำบลเข้มแข็ง ปี 2570</p></div>
+  </div>
+  <div class="live">
+    <span id="dot" class="dot"></span><span class="txt" id="liveTxt">กำลังเชื่อมต่อ…</span>
+    <button class="btn" id="refreshBtn" title="ดึงข้อมูลทันที"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M21 12a9 9 0 1 1-3-6.7L21 8"/><path d="M21 3v5h-5"/></svg>รีเฟรช</button>
+  </div>
+</div></div>
+
+<div class="wrap">
+  <div class="hero">
+    <svg class="art" viewBox="0 0 340 200" aria-hidden="true">
+      <defs><linearGradient id="lf" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8ee4b4"/><stop offset="1" stop-color="#22b573"/></linearGradient></defs>
+      <circle cx="250" cy="70" r="46" fill="#f5d76e" opacity=".9"/>
+      <circle cx="250" cy="70" r="64" fill="none" stroke="#f5d76e" stroke-opacity=".3" stroke-width="2" stroke-dasharray="4 8"/>
+      <path d="M0 175 Q 85 130 170 160 T 340 150 V200 H0Z" fill="#0b7a45" opacity=".85"/>
+      <path d="M0 188 Q 110 160 210 182 T 340 176 V200 H0Z" fill="#023c20" opacity=".8"/>
+      <g transform="translate(120 70)">
+        <rect x="0" y="62" width="22" height="46" rx="4" fill="#fff" opacity=".9"/>
+        <rect x="30" y="38" width="22" height="70" rx="4" fill="#fff" opacity=".9"/>
+        <rect x="60" y="14" width="22" height="94" rx="4" fill="#f5d76e"/>
+        <path d="M71 14 C 71 -6, 52 -14, 44 -6 C 56 -6, 66 2, 71 14Z" fill="url(#lf)"/>
+        <path d="M71 14 C 72 -8, 92 -16, 100 -8 C 88 -6, 77 2, 71 14Z" fill="url(#lf)"/>
+      </g>
+      <g fill="#fff" opacity=".7"><circle cx="40" cy="40" r="2"/><circle cx="80" cy="22" r="1.5"/><circle cx="310" cy="20" r="2"/><circle cx="190" cy="30" r="1.5"/></g>
+    </svg>
+    <div style="position:relative;z-index:1">
+      <div class="tags"><span class="tag g">รุ่นที่ 2</span><span class="tag">วันที่ 1</span><span class="tag">2 วิชา · 14 ประเด็น</span></div>
+      <h2>สรุปผลการประเมินรายวิชา</h2>
+      <h3>หลักสูตรสร้างผู้นำการเปลี่ยนแปลงขับเคลื่อนตำบลเข้มแข็ง ตามหลักปรัชญาของเศรษฐกิจพอเพียง ปี 2570</h3>
+      <div class="meta"><span id="metaN">ผู้ตอบ – คน</span><span id="metaLast">ตอบล่าสุด –</span></div>
+    </div>
+  </div>
+  <div id="banner" class="banner"></div>
+
+  <div id="app"><div class="loading"><div class="spin"></div>กำลังโหลดข้อมูล…</div></div>
+
+  <footer>กรมการพัฒนาชุมชน กระทรวงมหาดไทย · ข้อมูลอัปเดตอัตโนมัติทุก <span id="pollS">15</span> วินาที</footer>
+</div>
+
+<script>
+/* ===================== ตั้งค่า ===================== */
+const CSV_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSWFBhnXR7wCouCt-jfv4PAbCmWyFsoiBA8jBV5NBeYZxTTYyZDOR-9npG5Ajwx6f-IdFAHiHyihBFg/pub?gid=1943972571&single=true&output=csv';
+const POLL_MS = 15000;
+const CACHE_KEY = 'cdd_dash_r2d1_v1';
+
+const SUBJECTS = [
+  { key:'s1', title:'วิชาที่ 1: ผลสำเร็จของผู้นำการเปลี่ยนแปลงและกรอบแนวทางโครงการเสริมสร้างและพัฒนาผู้นำการเปลี่ยนแปลง ปี 2570',
+    items:['เนื้อหาช่วยให้เข้าใจบทบาทและภารกิจของผู้เกี่ยวข้องในการขับเคลื่อนโครงการในระดับพื้นที่','ระยะเวลาการบรรยาย (2 ชั่วโมง) เหมาะสมกับขอบเขตเนื้อหา','วิทยากรมีความรู้ความเชี่ยวชาญด้านการขับเคลื่อนงานพัฒนาชุมชน','สื่อประกอบการบรรยายมีความชัดเจนและช่วยให้เข้าใจง่ายขึ้น','ผู้เข้าอบรมได้รับความรู้ และทักษะเพิ่มเติมจากวิชานี้','ผู้เข้าอบรมสามารถนำแนวคิดไปประยุกต์ใช้ในการทำงานจริงในพื้นที่ได้'] },
+  { key:'s2', title:'วิชาที่ 2: ผู้นำการเปลี่ยนแปลงกับบริบทและสถานการณ์ความเปลี่ยนแปลงในอนาคต',
+    items:['เนื้อหาครอบคลุมสถานการณ์สังคม แนวโน้มการเปลี่ยนแปลง และผลกระทบต่อคน ครัวเรือน และชุมชน','ระยะเวลาการบรรยาย (2 ชั่วโมง) เหมาะสมกับขอบเขตเนื้อหา','การแบ่งกลุ่มฝึกปฏิบัติ (1 ชั่วโมง) ช่วยให้ผู้เข้าอบรมวิเคราะห์สถานการณ์ปัญหาในพื้นที่ได้ดีขึ้น','วิทยากรมีความเชี่ยวชาญด้านสถานการณ์สังคม การวิเคราะห์การเปลี่ยนแปลงของโลกในอนาคต','ผู้เข้าอบรมสามารถวิเคราะห์สถานการณ์สังคมและผลกระทบต่อชุมชนและเสนอแนวทางการขับเคลื่อนงานที่เหมาะสม','สื่อประกอบการบรรยายมีความชัดเจนและช่วยให้เข้าใจง่ายขึ้น','ผู้เข้าอบรมได้รับความรู้ และทักษะเพิ่มเติมจากวิชานี้','ผู้เข้าอบรมสามารถนำแนวคิดไปประยุกต์ใช้ในการทำงานจริงในพื้นที่ได้'] }
+];
+const QUESTIONS = SUBJECTS.flatMap(s => s.items.map((t, i) => ({ id:`${s.key}_${i+1}`, subj:s.key, no:i+1, text:t })));
+const PROFILE = [
+  { key:'gender', label:'เพศ', re:/^เพศ/ },
+  { key:'age', label:'อายุ', re:/^อายุ/ },
+  { key:'education', label:'วุฒิการศึกษา', re:/วุฒิ/ },
+  { key:'role', label:'สถานะทางสังคม', re:/สถานะ/ }
+];
+const SUGS = [
+  { key:'strengths', label:'สิ่งที่ประทับใจ / จุดเด่น', re:/ประทับใจ|จุดเด่น/, cls:'' },
+  { key:'improvements', label:'สิ่งที่ควรปรับปรุง / พัฒนา', re:/ปรับปรุง/, cls:'amber' },
+  { key:'nextdays', label:'ข้อเสนอแนะสำหรับวันถัดไป', re:/วันถัดไป/, cls:'blue' }
+];
+const SCORE_COLORS = { 5:'var(--c5)', 4:'var(--c4)', 3:'var(--c3)', 2:'var(--c2)', 1:'var(--c1)' };
+const PALETTE = ['#056839','#d4af37','#22b573','#2b5cb8','#c2410c','#7c3aed','#0891b2','#64748b'];
+
+/* ===================== Utilities ===================== */
+const $ = id => document.getElementById(id);
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const f2 = n => (isFinite(n) ? n : 0).toFixed(2);
+const pct = (a, b) => b ? (a / b * 100) : 0;
+function level(m){ if(!m) return {t:'–',c:'lv3'}; if(m>=4.51) return {t:'มากที่สุด',c:'lv5'}; if(m>=3.51) return {t:'มาก',c:'lv4'}; if(m>=2.51) return {t:'ปานกลาง',c:'lv3'}; if(m>=1.51) return {t:'น้อย',c:'lv2'}; return {t:'น้อยที่สุด',c:'lv1'}; }
+function hash(s){ let h = 5381; for (let i = 0; i < s.length; i++) h = (h * 33 ^ s.charCodeAt(i)) >>> 0; return h.toString(36) + ':' + s.length; }
+
+function parseCSV(text){
+  const rows = []; let row = [], cur = '', q = false;
+  for (let i = 0; i < text.length; i++){
+    const c = text[i];
+    if (q){ if (c === '"'){ if (text[i+1] === '"'){ cur += '"'; i++; } else q = false; } else cur += c; }
+    else if (c === '"') q = true;
+    else if (c === ','){ row.push(cur); cur = ''; }
+    else if (c === '\n'){ row.push(cur); rows.push(row); row = []; cur = ''; }
+    else if (c !== '\r') cur += c;
+  }
+  if (cur !== '' || row.length){ row.push(cur); rows.push(row); }
+  return rows;
+}
+
+function parseDate(s){
+  if (!s) return null;
+  s = String(s).trim();
+  let m = s.match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})[,\s]+(\d{1,2}):(\d{2})(?::(\d{2}))?/);
+  if (m){
+    let y = +m[3]; if (y > 2400) y -= 543;
+    const d = new Date(y, +m[2]-1, +m[1], +m[4], +m[5], +(m[6]||0));
+    return isNaN(d) ? null : d;
+  }
+  const d = new Date(s);
+  return isNaN(d) ? null : d;
+}
+
+/* ===================== Data model ===================== */
+function normalize(rows){
+  if (!rows.length) return { records: [], hasRaw: false };
+  const H = rows[0].map(h => String(h).replace(/^﻿/, '').trim());
+  const find = re => H.findIndex(h => re.test(h));
+  const col = {
+    ts: find(/วันที่เวลา|timestamp|ประทับเวลา/i),
+    batch: find(/^รุ่น/), day: find(/วันที่อบรม/),
+    json: find(/คะแนนรายข้อ|json/i),
+    avg1: find(/วิชาที่\s*1.*เฉลี่ย/), avg2: find(/วิชาที่\s*2.*เฉลี่ย/)
+  };
+  PROFILE.forEach(p => col[p.key] = find(p.re));
+  SUGS.forEach(s => col[s.key] = find(s.re));
+  const qCol = {};
+  H.forEach((h, i) => { const m = h.match(/วิชา\s*(\d)\s*[_\-\s]*ข้อ\s*(\d+)/); if (m && !/เฉลี่ย/.test(h)) qCol[`s${m[1]}_${m[2]}`] = i; });
+  let hasRaw = Object.keys(qCol).length > 0 || col.json >= 0;
+
+  const records = rows.slice(1).filter(r => r.some(c => String(c).trim())).map((r, idx) => {
+    const g = i => i >= 0 ? String(r[i] ?? '').trim() : '';
+    let raw = {};
+    if (col.json >= 0){ try { raw = JSON.parse(g(col.json)) || {}; } catch(e){ raw = {}; } }
+    const scores = {};
+    QUESTIONS.forEach(q => {
+      const v = Number(qCol[q.id] !== undefined ? g(qCol[q.id]) : raw[q.id]);
+      scores[q.id] = v >= 1 && v <= 5 ? Math.round(v) : null;
+    });
+    const rec = { idx, tsText: g(col.ts), ts: parseDate(g(col.ts)), batch: g(col.batch), day: g(col.day), scores,
+      avg1: parseFloat(g(col.avg1)) || null, avg2: parseFloat(g(col.avg2)) || null };
+    PROFILE.forEach(p => rec[p.key] = g(col[p.key]) || 'ไม่ระบุ');
+    SUGS.forEach(s => rec[s.key] = g(col[s.key]));
+    return rec;
+  });
+  return { records, hasRaw };
+}
+
+function aggregate({ records, hasRaw }){
+  const n = records.length;
+  const q = {};
+  QUESTIONS.forEach(Q => {
+    const counts = {1:0,2:0,3:0,4:0,5:0}; let sum = 0, sq = 0, k = 0;
+    records.forEach(r => { const v = r.scores[Q.id]; if (v){ counts[v]++; sum += v; sq += v*v; k++; } });
+    const mean = k ? sum / k : 0;
+    q[Q.id] = { ...Q, counts, k, mean, sd: k > 1 ? Math.sqrt(Math.max(0, (sq - k*mean*mean) / (k - 1))) : 0 };
+  });
+  const subj = {};
+  SUBJECTS.forEach((S, si) => {
+    let sum = 0, k = 0;
+    QUESTIONS.filter(Q => Q.subj === S.key).forEach(Q => { sum += q[Q.id].mean * q[Q.id].k; k += q[Q.id].k; });
+    let mean = k ? sum / k : 0;
+    if (!k){ const a = records.map(r => si ? r.avg2 : r.avg1).filter(Boolean); mean = a.length ? a.reduce((x,y)=>x+y,0)/a.length : 0; }
+    subj[S.key] = { mean, k };
+  });
+  let all = 0, allK = 0, hi = 0;
+  QUESTIONS.forEach(Q => { all += q[Q.id].mean * q[Q.id].k; allK += q[Q.id].k; hi += q[Q.id].counts[4] + q[Q.id].counts[5]; });
+  let overall = allK ? all / allK : 0;
+  if (!allK){ const s = Object.values(subj).filter(x => x.mean); overall = s.length ? s.reduce((a,b)=>a+b.mean,0)/s.length : 0; }
+
+  const prof = {};
+  PROFILE.forEach(P => {
+    const m = new Map(); records.forEach(r => m.set(r[P.key], (m.get(r[P.key]) || 0) + 1));
+    prof[P.key] = [...m.entries()].sort((a, b) => b[1] - a[1]);
+  });
+  const sugs = {};
+  SUGS.forEach(S => {
+    const m = new Map();
+    records.slice().reverse().forEach(r => {
+      const t = r[S.key]; if (!t || /^[-–—\s.]*$/.test(t) || /^(ไม่มี|ไม่มีครับ|ไม่มีค่ะ|-)$/.test(t)) return;
+      const key = t.replace(/\s+/g, ' ').toLowerCase();
+      const e = m.get(key); if (e) e.c++; else m.set(key, { t, c: 1 });
+    });
+    sugs[S.key] = [...m.values()];
+  });
+  const times = records.map(r => r.ts).filter(Boolean);
+  const last = records.length ? records[records.length - 1] : null;
+  return { n, q, subj, overall, hiPct: pct(hi, allK), allK, prof, sugs, times, last, hasRaw, records };
+}
+
+/* ===================== Render pieces ===================== */
+function ring(value, max, size, color, label){
+  const r = size/2 - 9, c = 2 * Math.PI * r, p = Math.max(0, Math.min(1, value / max));
+  return `<svg width="${size}" height="${size}" viewBox="0 0 ${size} ${size}" style="flex-shrink:0">
+    <circle cx="${size/2}" cy="${size/2}" r="${r}" fill="none" stroke="#e7f0ea" stroke-width="10"/>
+    <circle cx="${size/2}" cy="${size/2}" r="${r}" fill="none" stroke="${color}" stroke-width="10" stroke-linecap="round"
+      stroke-dasharray="${c}" stroke-dashoffset="${c * (1 - p)}" transform="rotate(-90 ${size/2} ${size/2})" style="transition:stroke-dashoffset .8s ease"/>
+    <text x="50%" y="50%" text-anchor="middle" dominant-baseline="central" font-size="${size/5}" font-weight="800" fill="#035a30" font-family="Prompt">${label}</text></svg>`;
+}
+function donut(entries, total){
+  const size = 150, r = 56, c = 2 * Math.PI * r; let off = 0;
+  const segs = entries.map(([k, v], i) => { const len = c * v / total; const s = `<circle cx="75" cy="75" r="${r}" fill="none" stroke="${PALETTE[i % PALETTE.length]}" stroke-width="22" stroke-dasharray="${len} ${c - len}" stroke-dashoffset="${-off}" transform="rotate(-90 75 75)"/>`; off += len; return s; }).join('');
+  return `<div class="donut-wrap"><svg width="${size}" height="${size}" viewBox="0 0 150 150">${total ? segs : `<circle cx="75" cy="75" r="${r}" fill="none" stroke="#eef2ef" stroke-width="22"/>`}
+    <text x="75" y="70" text-anchor="middle" font-size="26" font-weight="800" fill="#035a30" font-family="Prompt">${total}</text>
+    <text x="75" y="92" text-anchor="middle" font-size="12" fill="#5b6b62" font-family="Prompt">คน</text></svg>
+    <div class="legend">${entries.map(([k, v], i) => `<div><span class="sw" style="background:${PALETTE[i % PALETTE.length]}"></span><span style="flex:1">${esc(k)}</span><b>${v}</b><span class="sub">${pct(v,total).toFixed(1)}%</span></div>`).join('')}</div></div>`;
+}
+function hbars(entries, total){
+  if (!entries.length) return '<div class="empty">ยังไม่มีข้อมูล</div>';
+  const max = Math.max(...entries.map(e => e[1]));
+  return entries.map(([k, v]) => `<div class="hb"><div class="name">${esc(k)}</div><div class="track"><div class="fill" style="width:${pct(v,max)}%"></div></div><div class="num">${v} <span>(${pct(v,total).toFixed(1)}%)</span></div></div>`).join('');
+}
+const icon = (d, c = '#056839') => `<span class="ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="${c}" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">${d}</svg></span>`;
+const I = {
+  users:'<path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.9M16 3.1a4 4 0 0 1 0 7.8"/>',
+  cake:'<path d="M20 21v-8a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8M4 16s.5-1 2-1 2.5 2 4 2 2.5-2 4-2 2.5 2 4 2 2-1 2-1M2 21h20M7 8v3M12 8v3M17 8v3"/>',
+  grad:'<path d="M22 10 12 5 2 10l10 5 10-5Z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/>',
+  badge:'<circle cx="12" cy="8" r="6"/><path d="M15.5 13 17 22l-5-3-5 3 1.5-9"/>',
+  star:'<path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1Z"/>',
+  up:'<path d="m3 17 6-6 4 4 8-8"/><path d="M14 7h7v7"/>',
+  down:'<path d="m3 7 6 6 4-4 8 8"/><path d="M14 17h7v-7"/>',
+  clock:'<circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/>',
+  msg:'<path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2Z"/>',
+  person:'<circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 0 0-16 0"/>'
+};
+
+/* ===================== Sections ===================== */
+function secKpi(A){
+  const lv = level(A.overall);
+  const card = (label, valHtml, hint, ringHtml) => `<div class="card kpi">${ringHtml || ''}<div><div class="lbl">${label}</div><div class="val">${valHtml}</div><div class="hint">${hint}</div></div></div>`;
+  const s1 = A.subj.s1.mean, s2 = A.subj.s2.mean;
+  return `<div class="grid kpis">
+    ${card('จำนวนผู้ตอบแบบประเมิน', `${A.n.toLocaleString('th-TH')} <small>คน</small>`, `<span class="pill">${A.allK.toLocaleString('th-TH')} คำตอบรายข้อ</span>`,
+      `<div class="ic" style="width:64px;height:64px;border-radius:18px;background:linear-gradient(135deg,#056839,#22b573);display:grid;place-items:center;flex-shrink:0"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round">${I.users}</svg></div>`)}
+    ${card('ความพึงพอใจเฉลี่ยรวม', `${f2(A.overall)} <small>/ 5</small>`, `<span class="lv ${lv.c}">ระดับ${lv.t}</span>`, ring(A.overall, 5, 76, '#056839', pct(A.overall,5).toFixed(0)+'%'))}
+    ${card('วิชาที่ 1 เฉลี่ย', `${f2(s1)} <small>/ 5</small>`, `<span class="lv ${level(s1).c}">${level(s1).t}</span>`, ring(s1, 5, 76, '#d4af37', f2(s1)))}
+    ${card('วิชาที่ 2 เฉลี่ย', `${f2(s2)} <small>/ 5</small>`, `<span class="lv ${level(s2).c}">${level(s2).t}</span>`, ring(s2, 5, 76, '#22b573', f2(s2)))}
+  </div>
+  <div class="grid g3" style="margin-top:16px">
+    <div class="card"><h4>${icon(I.star,'#b58a10')}ให้คะแนนระดับ 4–5 <span class="sub">(มาก–มากที่สุด)</span></h4>
+      <div style="display:flex;align-items:center;gap:14px">${ring(A.hiPct, 100, 96, '#d4af37', A.hiPct.toFixed(0)+'%')}
+      <div class="sub" style="font-size:13px;line-height:1.6">สัดส่วนคำตอบที่อยู่ในระดับ "มาก" ขึ้นไป จากคำตอบรายข้อทั้งหมด ${A.allK.toLocaleString('th-TH')} คำตอบ</div></div></div>
+    <div class="card"><h4>${icon(I.badge)}เปรียบเทียบรายวิชา</h4>
+      ${SUBJECTS.map((S, i) => `<div class="hb" style="grid-template-columns:70px 1fr auto"><div class="name">วิชาที่ ${i+1}</div><div class="track" style="height:16px"><div class="fill" style="width:${pct(A.subj[S.key].mean,5)}%;background:${i ? 'linear-gradient(90deg,#8ee4b4,#22b573)' : 'linear-gradient(90deg,#f5d76e,#d4af37)'}"></div></div><div class="num">${f2(A.subj[S.key].mean)}</div></div>`).join('')}
+      <div class="scale" style="margin:12px 0 0">${[5,4,3,2,1].map(v => `<span><i class="sw" style="background:${SCORE_COLORS[v]}"></i>${v}</span>`).join('')}<span>= ระดับคะแนน</span></div></div>
+    <div class="card"><h4>${icon(I.clock)}การตอบตามช่วงเวลา</h4>${timeline(A.times)}</div>
+  </div>`;
+}
+function timeline(times){
+  if (times.length < 2) return '<div class="empty">ยังมีข้อมูลเวลาไม่พอแสดงกราฟ</div>';
+  const sorted = times.slice().sort((a, b) => a - b), span = sorted[sorted.length-1] - sorted[0];
+  const step = span <= 3*3600e3 ? 15*60e3 : span <= 24*3600e3 ? 3600e3 : 24*3600e3;
+  const start = Math.floor(sorted[0] / step) * step, nb = Math.min(24, Math.floor((sorted[sorted.length-1] - start) / step) + 1);
+  const b = new Array(nb).fill(0);
+  sorted.forEach(t => { const i = Math.min(nb - 1, Math.floor((t - start) / step)); b[i]++; });
+  const max = Math.max(...b);
+  const lab = i => { const d = new Date(start + i * step); return step >= 24*3600e3 ? `${d.getDate()}/${d.getMonth()+1}` : `${String(d.getHours()).padStart(2,'0')}:${String(d.getMinutes()).padStart(2,'0')}`; };
+  const every = Math.ceil(nb / 6);
+  return `<div class="tl">${b.map(v => `<div class="bar" style="height:${pct(v,max)}%">${v ? `<b>${v}</b>` : ''}</div>`).join('')}</div>
+    <div class="tl-x">${b.map((_, i) => `<span>${i % every === 0 ? lab(i) : ''}</span>`).join('')}</div>`;
+}
+function secRank(A){
+  const list = QUESTIONS.map(Q => A.q[Q.id]).filter(x => x.k);
+  if (!list.length) return '';
+  const sorted = list.slice().sort((a, b) => b.mean - a.mean);
+  const li = x => `<li><span class="b lv ${level(x.mean).c}">${f2(x.mean)}</span><span class="t">${esc(x.text)}<small>วิชาที่ ${x.subj.slice(1)} · ข้อ ${x.no}</small></span></li>`;
+  return `<div class="grid g2" style="margin-top:16px">
+    <div class="card"><h4>${icon(I.up)}ประเด็นที่ได้คะแนนสูงสุด</h4><ul class="rank">${sorted.slice(0,3).map(li).join('')}</ul></div>
+    <div class="card"><h4>${icon(I.down,'#c2410c')}ประเด็นที่ควรพัฒนา <span class="sub">(คะแนนต่ำสุด)</span></h4><ul class="rank">${sorted.slice(-3).reverse().map(li).join('')}</ul></div>
+  </div>`;
+}
+function secProfile(A){
+  const [g, a, e, r] = PROFILE.map(P => A.prof[P.key]);
+  return `<div class="section-title"><span class="n">1</span>ข้อมูลทั่วไปของผู้ตอบแบบประเมิน</div>
+  <div class="grid g2">
+    <div class="card"><h4>${icon(I.users)}เพศ</h4>${donut(g, A.n)}</div>
+    <div class="card"><h4>${icon(I.cake)}อายุ</h4>${hbars(a, A.n)}</div>
+    <div class="card"><h4>${icon(I.grad)}วุฒิการศึกษา</h4>${hbars(e, A.n)}</div>
+    <div class="card"><h4>${icon(I.badge)}สถานะทางสังคม</h4>${hbars(r, A.n)}</div>
+  </div>`;
+}
+function secSubjects(A){
+  if (!A.hasRaw) return `<div class="section-title"><span class="n">2</span>ความพึงพอใจรายประเด็น</div><div class="card empty">ชีตนี้ไม่มีคะแนนรายข้อ แสดงได้เฉพาะค่าเฉลี่ยรายวิชาด้านบน</div>`;
+  return `<div class="section-title"><span class="n">2</span>ความพึงพอใจรายประเด็น <span class="sub">(ความถี่ของแต่ละระดับคะแนน)</span></div>
+  ${SUBJECTS.map(S => {
+    const m = A.subj[S.key].mean, lv = level(m);
+    const rows = QUESTIONS.filter(Q => Q.subj === S.key).map(Q => {
+      const x = A.q[Q.id], l = level(x.mean);
+      return `<tr><td class="q"><b style="color:var(--em7)">${Q.no}.</b> ${esc(Q.text)}
+        <div class="dist">${[5,4,3,2,1].map(v => `<i style="width:${pct(x.counts[v], x.k)}%;background:${SCORE_COLORS[v]}" title="${v} คะแนน: ${x.counts[v]} คน"></i>`).join('')}</div></td>
+        ${[5,4,3,2,1].map(v => `<td class="cnt ${x.counts[v] ? '' : 'z'}">${x.counts[v]}<div class="sub" style="font-size:10.5px">${x.k ? pct(x.counts[v], x.k).toFixed(0) + '%' : ''}</div></td>`).join('')}
+        <td class="mean">${f2(x.mean)}</td><td>${f2(x.sd)}</td><td><span class="lv ${l.c}">${l.t}</span></td></tr>`;
+    }).join('');
+    return `<div class="card" style="margin-bottom:16px">
+      <div class="subj-head"><b>${esc(S.title)}</b><div class="subj-score"><div class="v">${f2(m)}</div><div class="l">ระดับ${lv.t}</div></div></div>
+      <div class="scale">${[5,4,3,2,1].map(v => `<span><i class="sw" style="background:${SCORE_COLORS[v]}"></i>${v} = ${['','น้อยที่สุด','น้อย','ปานกลาง','มาก','มากที่สุด'][v]}</span>`).join('')}</div>
+      <div class="table-scroll"><table><thead><tr><th>ประเด็นการประเมิน</th><th>5</th><th>4</th><th>3</th><th>2</th><th>1</th><th>x̄</th><th>S.D.</th><th>ระดับ</th></tr></thead><tbody>${rows}</tbody></table></div>
+    </div>`;
+  }).join('')}`;
+}
+function secSugs(A){
+  return `<div class="section-title"><span class="n">3</span>ข้อคิดเห็นและข้อเสนอแนะ</div>
+  <div class="grid g3">${SUGS.map(S => {
+    const list = A.sugs[S.key];
+    return `<div class="card"><h4>${icon(I.msg, S.cls === 'amber' ? '#c27c0e' : S.cls === 'blue' ? '#2b5cb8' : '#056839')}${S.label} <span class="pill" style="margin-left:auto">${list.length}</span></h4>
+      <div class="cm ${S.cls}">${list.length ? list.map(x => `<div class="it">${x.c > 1 ? `<span class="x">×${x.c}</span>` : ''}${esc(x.t)}</div>`).join('') : '<div class="empty">ยังไม่มีข้อเสนอแนะ</div>'}</div></div>`;
+  }).join('')}</div>`;
+}
+let pvIndex = null; // null = ล่าสุดเสมอ
+function secPerson(A){
+  if (!A.n) return '';
+  const i = pvIndex === null ? A.n - 1 : Math.min(pvIndex, A.n - 1), r = A.records[i];
+  const avgOf = key => { const v = QUESTIONS.filter(Q => Q.subj === key).map(Q => r.scores[Q.id]).filter(Boolean); return v.length ? v.reduce((a,b)=>a+b,0)/v.length : (key === 's1' ? r.avg1 : r.avg2) || 0; };
+  return `<div class="section-title"><span class="n">4</span>ดูคำตอบรายบุคคล</div>
+  <div class="card">
+    <h4 style="flex-wrap:wrap">${icon(I.person)}ผู้ตอบคนที่ ${i + 1} จาก ${A.n} <span class="sub">${esc(r.tsText)}</span>
+      <span class="pv-nav" style="margin-left:auto">
+        <button class="btn" data-pv="first" ${i === 0 ? 'disabled' : ''}>« แรก</button>
+        <button class="btn" data-pv="prev" ${i === 0 ? 'disabled' : ''}>‹ ก่อนหน้า</button>
+        <button class="btn" data-pv="next" ${i === A.n - 1 ? 'disabled' : ''}>ถัดไป ›</button>
+        <button class="btn" data-pv="last" ${i === A.n - 1 ? 'disabled' : ''}>ล่าสุด »</button>
+      </span></h4>
+    <div class="pv-grid">${PROFILE.map(P => `<div><span>${P.label}</span>${esc(r[P.key])}</div>`).join('')}</div>
+    ${SUBJECTS.map((S, si) => `<div style="margin:10px 0"><div style="font-size:13px;font-weight:600;margin-bottom:6px">วิชาที่ ${si+1} · เฉลี่ย <span style="color:var(--em7)">${f2(avgOf(S.key))}</span></div>
+      <div class="chips">${QUESTIONS.filter(Q => Q.subj === S.key).map(Q => { const v = r.scores[Q.id]; return `<span class="chip" title="${esc(Q.text)}" style="background:${v ? SCORE_COLORS[v] : '#cbd5e1'}">ข้อ ${Q.no}: ${v || '–'}</span>`; }).join('')}</div></div>`).join('')}
+    <div class="grid g3" style="margin-top:12px">${SUGS.map(S => `<div class="sar" style="font-size:13.5px;line-height:1.55"><div class="sub" style="font-family:Prompt">${S.label}</div>${esc(r[S.key] || '-')}</div>`).join('')}</div>
+  </div>`;
+}
+
+/* ===================== Render (เปลี่ยนเฉพาะส่วนที่ข้อมูลเปลี่ยน) ===================== */
+const SECTIONS = [['kpi', secKpi], ['rank', secRank], ['profile', secProfile], ['subjects', secSubjects], ['sugs', secSugs], ['person', secPerson]];
+const lastHtml = {};
+let A = null;
+function render(){
+  if (!A) return;
+  const app = $('app');
+  if (!app.dataset.ready){ app.innerHTML = SECTIONS.map(([k]) => `<div id="sec-${k}"></div>`).join(''); app.dataset.ready = 1; }
+  SECTIONS.forEach(([k, fn]) => { const h = fn(A); if (lastHtml[k] !== h){ $('sec-' + k).innerHTML = h; lastHtml[k] = h; } });
+  $('metaN').textContent = `ผู้ตอบ ${A.n.toLocaleString('th-TH')} คน`;
+  $('metaLast').textContent = A.last ? `ตอบล่าสุด ${A.last.tsText || '–'}` : 'ยังไม่มีผู้ตอบ';
+}
+
+/* ===================== Fetch (กันข้อมูลเก่าย้อนกลับ) ===================== */
+let current = null, seq = 0, appliedSeq = 0, staleStreak = 0, inflight = false;
+function apply(rows, source, mySeq){
+  if (mySeq < appliedSeq) return;                 // คำตอบที่มาช้ากว่าคำขอใหม่ → ทิ้ง
+  const sig = hash(JSON.stringify(rows));
+  const cnt = Math.max(0, rows.length - 1);
+  if (current){
+    if (sig === current.sig){ staleStreak = 0; return status(true); }
+    if (cnt < current.cnt && ++staleStreak < 3) return status(true); // แคชเก่าของ Google ส่งข้อมูลน้อยกว่า → ไม่ย้อนกลับ
+  }
+  staleStreak = 0; appliedSeq = mySeq;
+  current = { sig, cnt };
+  A = aggregate(normalize(rows));
+  render();
+  status(true);
+  if (source !== 'cache'){ try { localStorage.setItem(CACHE_KEY, JSON.stringify(rows)); } catch(e){} }
+}
+function status(ok, msg){
+  $('dot').className = 'dot ' + (ok ? 'on' : 'err');
+  const t = new Date().toLocaleTimeString('th-TH', { hour:'2-digit', minute:'2-digit', second:'2-digit' });
+  $('liveTxt').textContent = ok ? `เรียลไทม์ · อัปเดต ${t}` : 'เชื่อมต่อไม่ได้ · กำลังลองใหม่';
+  const b = $('banner'); b.classList.toggle('show', !!msg); if (msg) b.textContent = msg;
+}
+async function load(){
+  if (inflight || document.hidden) return;
+  inflight = true; const my = ++seq;
+  try {
+    let rows;
+    if (window.google && google.script && google.script.run){
+      rows = await new Promise((res, rej) => google.script.run.withSuccessHandler(res).withFailureHandler(rej).getDashboardData());
+    } else {
+      const res = await fetch(CSV_URL + (CSV_URL.includes('?') ? '&' : '?') + '_=' + Date.now(), { cache:'no-store' });
+      if (!res.ok) throw new Error('HTTP ' + res.status);
+      const text = await res.text();
+      if (/^\s*<!doctype|<html/i.test(text)) throw new Error('ไม่ได้รับไฟล์ CSV (ตรวจสอบว่าเผยแพร่ชีตแล้ว)');
+      rows = parseCSV(text);
+    }
+    apply(rows, 'live', my);
+  } catch (e) {
+    console.error(e);
+    status(false, current ? null : 'ยังดึงข้อมูลไม่ได้: ' + (e.message || e) + ' — ระบบจะลองใหม่อัตโนมัติ');
+    if (!current && !A){ $('app').innerHTML = '<div class="card empty">ยังไม่มีข้อมูลให้แสดง</div>'; delete $('app').dataset.ready; }
+  } finally { inflight = false; }
+}
+
+/* ===================== Start ===================== */
+$('pollS').textContent = POLL_MS / 1000;
+try { const c = localStorage.getItem(CACHE_KEY); if (c) apply(JSON.parse(c), 'cache', 0); } catch(e){}   // แสดงข้อมูลล่าสุดทันที
+load();
+setInterval(load, POLL_MS);
+document.addEventListener('visibilitychange', () => { if (!document.hidden) load(); });
+$('refreshBtn').addEventListener('click', () => { staleStreak = 0; load(); });
+document.addEventListener('click', e => {
+  const b = e.target.closest('[data-pv]'); if (!b || !A) return;
+  const cur = pvIndex === null ? A.n - 1 : pvIndex, act = b.dataset.pv;
+  pvIndex = act === 'first' ? 0 : act === 'prev' ? Math.max(0, cur - 1) : act === 'next' ? Math.min(A.n - 1, cur + 1) : null;
+  if (pvIndex === A.n - 1) pvIndex = null;
+  const h = secPerson(A); $('sec-person').innerHTML = h; lastHtml.person = h;
+});
+</script>
+</body>
+</html>
